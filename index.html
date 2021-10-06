@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To Do App</title>
+	<style type="text/css" media="all">
+		* {
+			margin: 0;
+			font-size: 15pt;
+		}
+		
+		body {
+			background: #e9edee;
+		}
+		
+		#container {
+			position: relative;
+			padding: 10px;
+			width: 400px;
+			height: 100%;
+			margin: auto;
+		}
+
+		#newTask {
+			background: #ddd;
+			border: none;
+			color: white;
+			padding: 0 15px 0;
+			z-index: 1;
+			width: 354px;
+			height: 36px;
+			margin: 1px;
+			outline: none;
+		}
+		
+		#newTask::placeholder {
+			opacity: 70%;
+			color: white;
+		}
+		
+		#numberTasks {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			position: absolute;
+			top: 10px;
+			right: 46px;
+			width: 36px;
+			height: 36px;
+		}
+
+		#addTask {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #9af56a;
+			color: white;
+			border: none;
+			position: absolute;
+			padding: 0;
+			margin: 1px;
+			top: 10px;
+			right: 10px;
+			width: 36px;
+			height: 36px;
+			font-size: 25pt;
+		}
+
+		#to-doList {
+			margin: 5px 0;
+			list-style: none;
+			padding: 0;
+		}
+
+		.tasks {
+			background: #ddd;
+			color: white;
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding: 0 15px;
+			border: 2px solid #e9edee;
+			height: 35px;
+			transition: 1s;
+		}
+
+		.default_checkbox {
+			position: absolute;
+			width: 0;
+			height: 0;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		.taskCheckbox {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			background: #eee;
+			right: 36px;
+			top: 50%;
+			border: none;
+			/*border: 1px solid #f00;*/
+			transform: translateY(-50%);
+		}
+		
+		.default_checkbox:checked ~ .taskCheckbox {
+  			background-color: #0fc5f2;
+		}
+
+		.removeTask {
+			background: #e65e5e;
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 36px;
+			height: 36px;
+			padding: 0;
+			border: none;
+			/*border: 1px solid #f00;*/
+			font-size: 25pt;
+			transform: translateY(-50%);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<input type="text" placeholder="Adicione a 1° Tarefa." id="newTask" value="" />
+		<div id="numberTasks">0</div>
+		<button id="addTask">+</button>
+		<ul id="to-doList"></ul>
+	</div>
+	<script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
